@@ -37,7 +37,10 @@ msgstr "Foo"
 
 @pytest.mark.parametrize(
     "input_data,output_data,add_location",
-    [(INPUT_PO_DATA, FILE_PO_DATA, "file"), (INPUT_PO_DATA, NEVER_PO_DATA, "never")],
+    [
+        (INPUT_PO_DATA, FILE_PO_DATA, "file"),
+        (INPUT_PO_DATA, NEVER_PO_DATA, "never"),
+    ],
 )
 def test_output_is_correct(input_data, output_data, add_location, tmpdir):
     with tmpdir.as_cwd():
