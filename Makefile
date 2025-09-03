@@ -15,13 +15,11 @@ install: install-requirements install-check
 
 update: pip-tools
 	poetry update
-	poetry run poetry up
 	poetry lock
 	poetry run pre-commit autoupdate
 
 test:
 	poetry run pytest
-
 
 check:
 	poetry run pre-commit run --show-diff-on-failure --color=always --all-files

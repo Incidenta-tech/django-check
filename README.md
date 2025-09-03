@@ -9,7 +9,7 @@ Inspired by: https://github.com/ecugol/pre-commit-hooks-django
 
 # Using django-check with pre-commit
 
-> django-check works with [supported Django versions](https://www.djangoproject.com/download/?supported-versions) only
+> django-check works with supported [Django versions](https://www.djangoproject.com/download/?supported-versions) and [Python versions](https://www.python.org/downloads/) only
 
 Add this to your `.pre-commit-config.yaml`
 

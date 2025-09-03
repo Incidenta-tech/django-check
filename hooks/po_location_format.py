@@ -1,10 +1,8 @@
 import argparse
-import tempfile
 import shutil
+import tempfile
+from collections.abc import Sequence
 from contextlib import closing
-from typing import Optional
-from typing import Sequence
-
 
 LOCATION_START = "#: "
 FILE = "file"
@@ -16,7 +14,7 @@ def _extract_location_file_name(line):
     return sorted({n.split(":")[0] for n in file_names})
 
 
-def main(argv: Optional[Sequence[str]] = None) -> int:
+def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("filenames", nargs="*", help="Filenames to process")
     parser.add_argument("--add-location", choices=[FILE, NEVER], required=True)
@@ -24,7 +22,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     add_location = args.add_location
     for filename in args.filenames:
         with tempfile.NamedTemporaryFile() as temp_file:
-            with closing(open(filename, "r")) as source_file:
+            with closing(open(filename)) as source_file:
                 location = set()
                 for line in source_file:
                     print(line)

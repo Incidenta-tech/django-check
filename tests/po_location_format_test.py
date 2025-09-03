@@ -1,8 +1,6 @@
 import pytest
 
 from hooks.po_location_format import main
-from hooks.utils import get_current_branch
-
 
 INPUT_PO_DATA = """
 #: foo/bar.py:123 foo/bar.py:200
