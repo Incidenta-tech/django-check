@@ -1,16 +1,18 @@
-pre-commit-hooks-django
+django-check
 ================
 
 Some useful hooks for Django development
 
 See also: https://github.com/pre-commit/pre-commit
 
-### Using pre-commit-hooks-django with pre-commit
+Inspired by: https://github.com/ecugol/pre-commit-hooks-django
+
+### Using django-check with pre-commit
 
 Add this to your `.pre-commit-config.yaml`
 
 ```yaml
--   repo: https://github.com/ecugol/pre-commit-hooks-django
+-   repo: https://github.com/Incidenta-tech/django-check
     rev: v0.4.0  # Use the ref you want to point at
     hooks:
     -   id: check-untracked-migrations
