@@ -7,7 +7,9 @@ See also: https://github.com/pre-commit/pre-commit
 
 Inspired by: https://github.com/ecugol/pre-commit-hooks-django
 
-### Using django-check with pre-commit
+# Using django-check with pre-commit
+
+> django-check works with [supported Django versions](https://www.djangoproject.com/download/?supported-versions) only
 
 Add this to your `.pre-commit-config.yaml`
 
@@ -28,33 +30,31 @@ Add this to your `.pre-commit-config.yaml`
         args: ["--add-location", "file"]
 ```
 
-### Hooks available
+# Hooks available
 
-#### `check-untracked-migrations`
+## `check-untracked-migrations`
 
 Forbids commit if untracked migrations files are found (e.g. `*/migrations/0001_initial.py`)
 
-##### Options:
+### Options:
     --branches
 
     Optional, if specified, hook will work only on these branches
     otherwise it will work on all branches
 
-#### `check-unapplied-migrations`
-
-*WARNING: USE ONLY WITH DJANGO > v3.1*
+## `check-unapplied-migrations`
 
 Check for unapplied migrations with manage.py migrate --check
 
-#### `check-absent-migrations`
+## `check-absent-migrations`
 
 Check for absent migrations with manage.py makemigrations --check --dry-run
 
-#### `po-location-format`
+## `po-location-format`
 
 Changes location format for .po files
 
-##### Options:
+### Options:
 
     --add-location [file, never]
 
@@ -62,3 +62,11 @@ Changes location format for .po files
 
     file: show only the file path as location
     never: remove all locations
+
+# Development
+
+> We use poetry as package manager for this package
+
+- `make install` - install dependencies and pre-commit
+- `make test` - run tests
+- `make check` - run linters and format code
