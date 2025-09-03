@@ -17,12 +17,15 @@ def check_debug_mode_via_django_settings(project_folder: str = ".") -> bool:
     try:
         settings = init_django_settings(project_folder)
         if settings is None:
+            print("ERROR: Django settings are not initialized")
             return False
 
         # Get DEBUG value from Django settings
         settings_value = getattr(settings, "DEBUG", None)
+        print(f"DEBUG mode: {settings_value}")
         return settings_value is False
     except Exception:
+        print("ERROR: Failed to check DEBUG mode")
         return False
 
 
